@@ -1,0 +1,25 @@
+---
+name: Add REST APIs to Account Microservice
+about: Task to add read, update, delete, and list APIs to the account microservice
+title: 'Add REST APIs to Account Microservice: Implement CRUD Operations'
+
+---
+
+**As a** developer  
+**I need** to add REST APIs to the account microservice  
+**So that** other microservices can perform CRUD operations on customer accounts.
+
+### Details and Assumptions
+* The existing microservice has been set up with a Python Flask framework.
+* Database operations for creating customer accounts are already implemented.
+* The online lab environment is accessible for development and testing.
+
+### Acceptance Criteria
+```gherkin
+Given the account microservice with a Flask framework and existing database model,
+When I implement the following REST API endpoints:
+  - GET /api/customers
+  - GET /api/customers/{id}
+  - PUT /api/customers/{id}
+  - DELETE /api/customers/{id}
+Then other microservices can successfully read, update, delete, and list customer accounts.
