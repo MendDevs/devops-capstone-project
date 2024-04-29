@@ -59,7 +59,7 @@ def create_accounts():
 
 
 ######################################################################
-# LIST ALL ACCOUNTS
+# LIST ALL ACCOUNTS: pay attention to spaces here
 ######################################################################
 
 @app.route("/accounts", methods=["GET"])
