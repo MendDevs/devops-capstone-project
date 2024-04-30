@@ -8,8 +8,8 @@ import sys
 from flask import Flask
 from service import config
 from service.common import log_handlers
-from flask_talisman import Talisman #added Talisman class
-from flask_cors import CORS #added flask cors
+from flask_talisman import Talisman # added Talisman class
+from flask_cors import CORS # added flask cors
 
 
 
@@ -17,10 +17,10 @@ from flask_cors import CORS #added flask cors
 app = Flask(__name__)
 app.config.from_object(config)
 
-#creating an instance of the Talisman app
+# Creating an instance of the Talisman app
 talisman = Talisman(app)
 
-#flask_cors instance
+# flask_cors instance
 cors = CORS(app)
 
 # Import the routes After the Flask app is created
