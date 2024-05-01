@@ -129,7 +129,7 @@ class TestAccountService(TestCase):
 
     # ADD YOUR TEST CASES HERE ...
     
-    #create a test case and watch it fall
+    # create a test case and watch it fall
     def test_get_account(self):
         """It should Read a single Account"""
         account = self._create_accounts(1)[0]
@@ -140,13 +140,13 @@ class TestAccountService(TestCase):
         data = resp.get_json()
         self.assertEqual(data["name"], account.name)
     
-    #check your code coverage
+    # check your code coverage
     def test_get_account_not_found(self):
         """It should not Read an Account that is not found"""
         resp = self.client.get(f"{BASE_URL}/0")
         self.assertEqual(resp.status_code, status.HTTP_404_NOT_FOUND)
 
-    #test case: list function
+    # test case: list function
     def test_get_account_list(self):
         """It should Get a list of Accounts"""
         self._create_accounts(5)
@@ -155,7 +155,7 @@ class TestAccountService(TestCase):
         data = resp.get_json()
         self.assertEqual(len(data), 5)
     
-    #test case: update function
+    # test case: update function
     def test_update_account(self):
         """It should Update an existing Account"""
         # create an Account to update
@@ -171,7 +171,7 @@ class TestAccountService(TestCase):
         updated_account = resp.get_json()
         self.assertEqual(updated_account["name"], "Something Known")
 
-    #test case: delete function
+    # test case: delete function
     def test_delete_account(self):
         """It should Delete an Account"""
         account = self._create_accounts(1)[0]
@@ -184,7 +184,7 @@ class TestAccountService(TestCase):
         resp = self.client.delete(BASE_URL)
         self.assertEqual(resp.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
 
-    #test case: calls root URL
+    # test case: calls root URL
     def test_security_headers(self):
         """It should return security headers"""
         response = self.client.get('/', environ_overrides=HTTPS_ENVIRON)
@@ -198,7 +198,7 @@ class TestAccountService(TestCase):
         for key, value in headers.items():
             self.assertEqual(response.headers.get(key), value)
     
-    #test case: checking the CORS headers
+    # test case: checking the CORS headers
     def test_cors_security(self):
         """It should return a CORS header"""
         response = self.client.get('/', environ_overrides=HTTPS_ENVIRON)
